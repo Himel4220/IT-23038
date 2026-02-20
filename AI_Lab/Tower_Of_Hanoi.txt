@@ -1,0 +1,11 @@
+move(1, Source, Target, _) :- 
+format('Move disk from ~w to ~w~n', [Source, Target]). 
+move(N, Source, Target, Aux) :- 
+N > 1, 
+M is N - 1, 
+move(M, Source, Aux, Target), 
+move(1, Source, Target, _), 
+move(M, Aux, Target, Source). 
+hanoi(N) :- 
+move(N, 'Left Tower', 'Right Tower', 'Center Tower'). 
+:- initialization(hanoi(3))

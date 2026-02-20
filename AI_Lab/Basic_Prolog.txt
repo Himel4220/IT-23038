@@ -1,0 +1,9 @@
+:- initialization(main). 
+min_max(A, B, Min, Max) :- 
+( A =< B -> Min = A, Max = B ; Min = B, Max = A ). 
+main :- 
+A = 5, 
+B = 10, 
+min_max(A, B, Min, Max), 
+write('Minimum: '), write(Min), nl, 
+write('Maximum: '), write(Max), nl. 
